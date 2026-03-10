@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Sabor</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+
+        body {
+            background-color: #dcdcdc;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        /* Topo com Imagem (50% da tela) */
+        .image-container {
+            height: 50vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        #foto-sorvete {
+            height: 100%;
+            width: 100%;
+            max-width: 600px;
+            object-fit: cover;
+            border-radius: 80px; /* Bordas bem redondas */
+            background-color: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Conteúdo (50% da tela) */
+        .info-container {
+            height: 50vh;
+            padding: 40px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h2 {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #000;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+
+        .voltar {
+            margin-top: auto;
+            margin-bottom: 20px;
+            text-decoration: none;
+            color: #d19999;
+            font-weight: bold;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="image-container">
+        <img id="foto-sorvete" src="" alt="Foto do Sorvete">
+    </div>
+
+    <div class="info-container">
+        <h2 id="titulo">Título do Sabor</h2>
+        <p id="descricao">Descrição do sabor selecionado.</p>
+        
+        <a href="index.html" class="voltar">← Voltar ao Menu</a>
+    </div>
+
+    <script>
+        // Banco de dados com as informações da sua imagem
+        const dados = [
+            { t: "Chocolate Belga", d: "Cacau de origem com textura aveludada e sabor intenso. Um clássico irresistível e profundo.", i: "img/chocolate.jpg" },
+            { t: "Morango Silvestre", d: "Feito com morangos frescos colhidos no ponto, trazendo um dulçor natural com leve acidez.", i: "img/morango.jpg" },
+            { t: "Pistache Siciliano", d: "Pistaches selecionados e levemente tostados, criando um sabor amendoado, sofisticado e cremoso.", i: "img/pistache.jpg" },
+            { t: "Doce de Leite", d: "Doce de leite cozido lentamente, garantindo uma cor dourada e o sabor nostálgico da infância.", i: "img/doce.jpg" },
+            { t: "Baunilha Madagascar", d: "Favas naturais de baunilha que entregam um aroma delicado e um sabor puro e reconfortante.", i: "img/baunilha.jpg" },
+            { t: "Limão Siciliano", d: "Refrescante e cítrico, feito com o suco da fruta real para uma sensação de leveza imediata.", i: "img/limao.jpg" },
+            { t: "Gianduia", d: "A união perfeita de chocolate cremoso com o sabor marcante e terroso da avelã torrada.", i: "img/gianduia.jpg" },
+            { t: "Frutas Vermelhas", d: "Uma mistura vibrante de framboesa, amora e mirtilo, com um equilíbrio perfeito entre doce e ácido.", i: "img/frutas.jpg" },
+            { t: "Café Espresso", d: "Extraído de grãos selecionados, este sabor oferece uma experiência intensa e energizante.", i: "img/cafe.jpg" },
+            { t: "Coco Queimado", d: "Coco ralado tostado que traz uma textura crocante e um sabor tropical levemente caramelizado.", i: "img/coco.jpg" }
+        ];
+
+        // Lógica para carregar o conteúdo certo
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+
+        if (id !== null && dados[id]) {
+            document.getElementById('titulo').innerText = dados[id].t;
+            document.getElementById('descricao').innerText = dados[id].d;
+            document.getElementById('foto-sorvete').src = dados[id].i;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Sorveteria Artesanal</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+
+        body {
+            background-color: #dcdcdc;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 40px;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .grid-menu {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+            grid-template-rows: repeat(5, 1fr);    /* 5 linhas */
+            gap: 15px;
+            width: 90vw;
+            height: 70vh;
+            max-width: 1000px;
+        }
+
+        .btn-sabor {
+            background-color: #d19999;
+            color: #222;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-sabor:hover {
+            background-color: #b07070;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Sorveteria Artesanal</h1>
+
+    <nav class="grid-menu">
+        <a href="sabor.html?id=0" class="btn-sabor">Chocolate Belga</a>
+        <a href="sabor.html?id=1" class="btn-sabor">Morango Silvestre</a>
+        <a href="sabor.html?id=2" class="btn-sabor">Pistache Siciliano</a>
+        <a href="sabor.html?id=3" class="btn-sabor">Doce de Leite</a>
+        <a href="sabor.html?id=4" class="btn-sabor">Baunilha Madagascar</a>
+        <a href="sabor.html?id=5" class="btn-sabor">Limão Siciliano</a>
+        <a href="sabor.html?id=6" class="btn-sabor">Gianduia</a>
+        <a href="sabor.html?id=7" class="btn-sabor">Frutas Vermelhas</a>
+        <a href="sabor.html?id=8" class="btn-sabor">Café Espresso</a>
+        <a href="sabor.html?id=9" class="btn-sabor">Coco Queimado</a>
+    </nav>
+
+</body>
+</html>
