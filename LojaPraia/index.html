@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Loja da Praia | Aluguel e Aulas de Surf</title>
+  <meta name="description" content="Aluguel de equipamentos de praia e aulas de surf com agendamento online em Loja da Praia.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav-wrap">
+      <a href="#inicio" class="brand">
+        <span class="brand-mark">LP</span>
+        <span class="brand-text">Loja da Praia</span>
+      </a>
+      <nav class="menu" id="menu">
+        <a href="#equipamentos">Equipamentos</a>
+        <a href="#aulas">Aulas</a>
+        <a href="#reservas">Reservas</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <section class="hero ciamar-hero">
+      <div class="hero-overlay"></div>
+      <div class="cartoon-sun" aria-hidden="true"></div>
+      <div class="cartoon-wave wave-1" aria-hidden="true"></div>
+      <div class="cartoon-wave wave-2" aria-hidden="true"></div>
+      <div class="doodle-bubbles" aria-hidden="true">
+        <span class="bubble b1"></span>
+        <span class="bubble b2"></span>
+        <span class="bubble b3"></span>
+        <span class="bubble b4"></span>
+      </div>
+      <div class="hero-3d-scene" id="heroScene" aria-hidden="true">
+        <div class="sticker surfboard">🏄</div>
+        <div class="sticker shell">🐚</div>
+        <div class="sticker fish">🐠</div>
+        <div class="sticker star">⭐</div>
+      </div>
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <p class="pill">Escola e Loja de Surf</p>
+          <h1>Aulas de surf e aluguel de equipamentos para viver o mar todos os dias</h1>
+          <p>
+            Da primeira onda ao treino avancado: reserve aulas, pranchas, SUP, caiaque,
+            cadeiras e guarda-sois com atendimento rapido e estrutura completa na orla.
+          </p>
+          <div class="hero-actions">
+            <a href="#reservas" class="btn btn-primary">Reservar agora</a>
+            <a href="#aulas" class="btn btn-ghost">Conhecer aulas</a>
+          </div>
+        </div>
+        <aside class="hero-card weather-card">
+          <h2>Condições em tempo real</h2>
+          <div id="weatherContent">
+            <p class="loading">Carregando clima e mar...</p>
+          </div>
+          <small>Dados via Open-Meteo (região litorânea de referência)</small>
+        </aside>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container stats-grid">
+        <article><h3>+8 anos</h3><p>de experiência com surf</p></article>
+        <article><h3>3000+</h3><p>clientes atendidos</p></article>
+        <article><h3>4.9/5</h3><p>avaliação média</p></article>
+        <article><h3>7 dias</h3><p>de operação por semana</p></article>
+      </div>
+    </section>
+
+    <section id="equipamentos" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Catálogo de Equipamentos</h2>
+          <p>Monte seu dia de praia com pranchas, itens de conforto, aventura e mobilidade.</p>
+        </div>
+        <div class="toolbar">
+          <select id="categoryFilter" aria-label="Filtrar por categoria">
+            <option value="all">Todas as categorias</option>
+            <option value="surf">Surf</option>
+            <option value="conforto">Conforto</option>
+            <option value="aventura">Aventura</option>
+            <option value="mobilidade">Mobilidade</option>
+          </select>
+          <input id="searchInput" type="search" placeholder="Pesquisar item...">
+        </div>
+        <div id="equipmentGrid" class="cards-grid"></div>
+      </div>
+    </section>
+
+    <section id="aulas" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Aulas de Surf</h2>
+          <p>Turmas para iniciantes e intermediarios com foco em tecnica, seguranca e evolucao.</p>
+        </div>
+        <div id="classesGrid" class="class-grid"></div>
+      </div>
+    </section>
+
+    <section id="reservas" class="section">
+      <div class="container booking-layout">
+        <div>
+          <div class="section-head">
+            <h2>Reserva e Agendamento Online</h2>
+            <p>Agende aula ou aluguel em segundos com opcao de retirada na base ou delivery.</p>
+          </div>
+          <form id="bookingForm" class="booking-form">
+            <label>Nome completo
+              <input type="text" name="name" required>
+            </label>
+            <label>WhatsApp
+              <input type="tel" name="phone" placeholder="(00) 00000-0000" required>
+            </label>
+            <label>Serviço
+              <select name="serviceType" required>
+                <option value="">Selecione</option>
+                <option value="aluguel">Aluguel de equipamento</option>
+                <option value="aula">Aula de surf</option>
+              </select>
+            </label>
+            <label>Item ou aula
+              <input type="text" name="serviceName" placeholder="Ex: Prancha Performance" required>
+            </label>
+            <label>Data
+              <input type="date" name="date" required>
+            </label>
+            <label>Horário
+              <input type="time" name="time" required>
+            </label>
+            <label>Entrega/Retirada
+              <select name="deliveryType" required>
+                <option value="retirada">Retirada na loja</option>
+                <option value="delivery">Delivery na praia/hospedagem</option>
+              </select>
+            </label>
+            <label>Observações
+              <textarea name="notes" rows="3" placeholder="Nível da aula, endereço para delivery, etc."></textarea>
+            </label>
+            <button class="btn btn-primary" type="submit">Confirmar agendamento</button>
+          </form>
+        </div>
+        <aside class="bookings-panel">
+          <h3>Agenda de Surf e Aluguel</h3>
+          <p class="panel-sub">Ultimos horarios e reservas registradas nesta sessao.</p>
+          <ul id="bookingList"></ul>
+        </aside>
+      </div>
+    </section>
+
+    <section id="galeria" class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <h2>Galeria de Experiências</h2>
+          <p>Aulas na agua, treinos de remada e momentos reais da comunidade do surf local.</p>
+        </div>
+        <div class="gallery-grid">
+          <img src="https://images.unsplash.com/photo-1502680390469-be75c86b636f?auto=format&fit=crop&w=1000&q=80" alt="Surfista em onda">
+          <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1000&q=80" alt="Praia ao pôr do sol">
+          <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd53?auto=format&fit=crop&w=1000&q=80" alt="Aula de surf">
+          <img src="https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=1000&q=80" alt="Mar azul">
+          <img src="https://images.unsplash.com/photo-1455729552865-3658a5d39692?auto=format&fit=crop&w=1000&q=80" alt="Pranchas de surf">
+          <img src="https://images.unsplash.com/photo-1473186578172-c141e6798cf4?auto=format&fit=crop&w=1000&q=80" alt="Stand up paddle na costa">
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" class="section">
+      <div class="container contact-grid">
+        <div>
+          <div class="section-head">
+            <h2>Localização e Contato</h2>
+            <p>Base na orla principal, perto dos picos e com facil acesso para turistas e locais.</p>
+          </div>
+          <div class="contact-cards">
+            <a class="contact-card" href="https://wa.me/5500000000000" target="_blank" rel="noopener noreferrer">
+              <strong>WhatsApp</strong>
+              <span>Atendimento rapido para aulas e aluguel</span>
+            </a>
+            <a class="contact-card" href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
+              <strong>Instagram</strong>
+              <span>Ondas do dia, reels de aulas e promo da semana</span>
+            </a>
+          </div>
+        </div>
+        <div class="map-wrap">
+          <iframe
+            title="Mapa da loja"
+            loading="lazy"
+            src="https://www.google.com/maps?q=Praia%20de%20Ponta%20Negra&output=embed">
+          </iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-columns">
+      <div>
+        <h4>Institucional</h4>
+        <a href="#inicio">Nossa escola</a>
+        <a href="#contato">Base de praia</a>
+        <a href="#contato">Equipe de instrutores</a>
+      </div>
+      <div>
+        <h4>Conta</h4>
+        <a href="#reservas">Meus agendamentos</a>
+        <a href="#reservas">Historico de aulas</a>
+        <a href="#reservas">Reservas de equipamentos</a>
+      </div>
+      <div>
+        <h4>Suporte</h4>
+        <a href="#reservas">Pacotes de aulas</a>
+        <a href="#reservas">Aluguel e delivery</a>
+        <a href="#reservas">Regras e cancelamentos</a>
+      </div>
+      <div class="newsletter">
+        <h4>Newsletter</h4>
+        <p>Receba condicoes de aula, previsao de mar e novidades de equipamentos.</p>
+        <form class="newsletter-form">
+          <input type="text" placeholder="Nome">
+          <input type="email" placeholder="E-mail">
+          <button type="button" class="btn btn-primary">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+    <div class="container footer-content">
+      <p>© <span id="year"></span> Loja da Praia. Todos os direitos reservados.</p>
+      <p>SAC (84) 99999-0000</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
